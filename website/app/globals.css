@@ -2,15 +2,15 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #13232b;
+  --foreground: #1a262d;
   --card: #ffffff;
-  --muted: #edf5f6;
-  --muted-foreground: #4d626c;
-  --border: #d6e3e7;
-  --brand-primary: #0b5d71;
-  --brand-secondary: #087f8c;
-  --brand-accent: #62b6a8;
-  --brand-logo: #0b5d71;
+  --muted: #f4f6f8;
+  --muted-foreground: #596973;
+  --border: #dce2e5;
+  --brand-primary: #1d5272;
+  --brand-secondary: #2c74a0;
+  --brand-accent: #93bad2;
+  --brand-logo: #1d5272;
 }
 
 @theme inline {

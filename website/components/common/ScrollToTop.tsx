@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,18 +14,28 @@ export function ScrollToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!visible) return null;
-
   return (
-    <Button
-      type="button"
-      size="icon"
-      variant="secondary"
-      className="fixed bottom-6 right-6 z-40 shadow-lg"
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      aria-label="Scroll to top"
-    >
-      <ArrowUp className="h-5 w-5" />
-    </Button>
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          className="fixed bottom-6 right-6 z-40"
+          initial={{ opacity: 0, scale: 0.8, y: 12 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 12 }}
+          transition={{ duration: 0.2, ease: "easeOut" }}
+        >
+          <Button
+            type="button"
+            size="icon"
+            variant="secondary"
+            className="shadow-lg"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="h-5 w-5" />
+          </Button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

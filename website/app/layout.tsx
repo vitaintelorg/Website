@@ -16,7 +16,7 @@ const geistSans = Geist({
 export const metadata: Metadata = defaultMetadata;
 
 export const viewport: Viewport = {
-  themeColor: "#0b5d71",
+  themeColor: "#1d5272",
 };
 
 export default function RootLayout({

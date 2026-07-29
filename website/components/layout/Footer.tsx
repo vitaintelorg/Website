@@ -111,6 +111,11 @@ export function Footer() {
           <p>© {year} {siteConfig.name}. All rights reserved.</p>
           <p>{siteConfig.contact.address}</p>
         </div>
+        <p className="mt-4 text-xs leading-relaxed text-muted-foreground/80">
+          VitaIntel is a research and development project and is not yet a certified medical
+          device. It is not intended to diagnose, treat, or replace professional medical judgment.
+          Regulatory classification with the Egyptian Drug Authority (EDA) is in progress.
+        </p>
       </Container>
     </footer>
   );
