@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/common/PageHero";
 import { Container } from "@/components/layout/Container";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { siteConfig } from "@/config/site";
 import { pageMetadata } from "@/config/metadata";
 import { createPageMetadata } from "@/lib/metadata";
@@ -38,6 +39,17 @@ export default function ContactPage() {
               <MapPin className="mx-auto h-6 w-6 text-brand-secondary" aria-hidden="true" />
               <h2 className="mt-4 font-semibold">Find us</h2>
               <p className="mt-2 text-sm text-muted-foreground">{siteConfig.contact.address}</p>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-2xl border border-border bg-card p-6 shadow-sm md:p-10">
+            <h2 className="text-xl font-semibold text-foreground">Send us a message</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Tell us a bit about your hospital or center and what you&apos;re looking for —
+              we typically reply within a couple of business days.
+            </p>
+            <div className="mt-8">
+              <ContactForm />
             </div>
           </div>
         </Container>

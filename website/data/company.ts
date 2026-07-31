@@ -10,11 +10,22 @@ export const company = {
     "AI-driven precision healthcare for Egyptian hospitals",
     "Supporting radiologists with trustworthy diagnostic AI",
   ],
-  teamPlaceholder: {
-    title: "[Placeholder] Team profiles coming soon",
-    description:
-      "Founder and team bios will be added when approved for publication.",
-  },
+  team: [
+    {
+      name: "Abdullah Saber Abdelbaeth",
+      role: "Founder & CEO",
+      bio: "AI/ML engineer leading overall strategy and business development.",
+      initials: "AS",
+    },
+    {
+      name: "Mahmoud El-Masry",
+      role: "Founding Cybersecurity Lead",
+      bio: "Owns cybersecurity company-wide — infrastructure, endpoints, access control, and vendor risk as the team scales.",
+      initials: "ME",
+    },
+  ],
+  teamComposition:
+    "Alongside the founding leadership, VitaIntel is built by a six-person technical team — spanning AI/ML engineering with medical-domain knowledge, data annotation, full-stack development, and network engineering — plus a medical team of a senior radiologist and a trainee supporting clinical validation.",
   regulatory: [
     {
       title: "SaMD Classification",

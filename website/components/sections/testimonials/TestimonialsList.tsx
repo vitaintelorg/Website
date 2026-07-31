@@ -10,7 +10,7 @@ export function TestimonialsList() {
         <Container>
           <EmptyState
             title="No testimonials yet"
-            description="[Placeholder] Approved testimonials will be published here."
+            description="Approved testimonials will be published here as pilot partners come on board."
           />
         </Container>
       </section>
@@ -26,7 +26,7 @@ export function TestimonialsList() {
           ))}
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          [Placeholder] Additional testimonials will be added when approved for publication.
+          More testimonials will be added here as additional pilot partnerships are confirmed.
         </p>
       </Container>
     </section>

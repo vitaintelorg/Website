@@ -26,7 +26,7 @@ export const services: Service[] = [
       "VitaIntel's Diagnostic Imaging models are being developed to detect anomalies in medical scans. Published research on comparable computer-vision diagnostic systems reports accuracy up to 99.2% — the benchmark this work targets.",
     icon: ImageIcon,
     features: [
-      "X-ray, MRI, and CT analysis",
+      "Mammography, ultrasound, MRI, CT, and X-ray analysis",
       "Radiologist-assist workflow design",
       "Real-time analysis targets",
     ],

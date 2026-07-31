@@ -7,6 +7,7 @@ import { company } from "@/data/company";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/Container";
+import { CellClusterMotif } from "@/components/common/CellClusterMotif";
 import { TypedSubtitle } from "./TypedSubtitle";
 
 export function Hero() {
@@ -17,8 +18,8 @@ export function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-brand-primary/10 blur-3xl" />
-        <div className="absolute bottom-10 right-0 h-96 w-96 rounded-full bg-brand-secondary/10 blur-3xl" />
+        <CellClusterMotif className="absolute -right-16 top-0 h-[32rem] w-[32rem] opacity-80 md:-right-10 md:top-8" />
+        <CellClusterMotif className="absolute -left-24 bottom-0 hidden h-96 w-96 -scale-x-100 opacity-60 md:block" />
         <div className="absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-brand-accent/10 blur-3xl" />
       </div>
 

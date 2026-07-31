@@ -71,11 +71,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         type: "stats",
-        stats: [
-          { value: "[Placeholder]", label: "Research institutions engaged" },
-          { value: "[Placeholder]", label: "Genomes in validation pipeline" },
-          { value: "30%", label: "Target faster discovery workflows" },
-        ],
+        stats: [{ value: "30%", label: "Target faster discovery workflows" }],
       },
       {
         type: "heading",
@@ -84,7 +80,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "paragraph",
         content:
-          "[Placeholder] Next-generation algorithms may predict disease susceptibility earlier. VitaIntel's roadmap includes expanding genomic monitoring concepts as core diagnostic work matures.",
+          "Next-generation algorithms may predict disease susceptibility earlier. VitaIntel's roadmap includes expanding genomic monitoring concepts as core diagnostic work matures.",
       },
     ],
   },
@@ -150,7 +146,7 @@ export const blogPosts: BlogPost[] = [
       {
         type: "callout",
         content:
-          "[Placeholder] The future of precision medicine lies in integrating multi-omics data and real-time monitoring — areas VitaIntel is actively researching.",
+          "The future of precision medicine lies in integrating multi-omics data and real-time monitoring — areas VitaIntel is actively researching.",
       },
     ],
   },
