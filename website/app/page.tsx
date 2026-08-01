@@ -3,8 +3,8 @@ import {
   BlogPreview,
   ContactCTA,
   Hero,
-  PortfolioPreview,
   ServicesPreview,
+  TechnologyPreview,
 } from "@/components/sections/home";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <Hero />
       <AboutPreview />
       <ServicesPreview />
-      <PortfolioPreview />
+      <TechnologyPreview />
       <BlogPreview />
       <ContactCTA />
     </>

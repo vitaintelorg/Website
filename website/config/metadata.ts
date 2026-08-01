@@ -61,11 +61,11 @@ export const pageMetadata = {
       "Discover VitaIntel's AI-driven biomedical solutions: Genomic AI, Diagnostic Imaging, and Computational Biology.",
     path: "/services",
   },
-  portfolio: {
-    title: "Our Portfolio",
+  technology: {
+    title: "Technology",
     description:
-      "Explore VitaIntel's AI-powered healthcare projects in cancer detection, genomics, and clinical research.",
-    path: "/portfolio",
+      "An honest look at VitaIntel's AI pipeline — model architecture, datasets, and roadmap.",
+    path: "/technology",
   },
   blog: {
     title: "Blog",

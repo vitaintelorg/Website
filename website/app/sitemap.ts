@@ -4,7 +4,7 @@ import { blogPosts } from "@/data/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  const pages = ["", "/about", "/services", "/portfolio", "/blog", "/contact"];
+  const pages = ["", "/about", "/services", "/technology", "/blog", "/contact"];
 
   return [
     ...pages.map((path) => ({ url: `${siteConfig.url}${path}`, lastModified, changeFrequency: "monthly" as const, priority: path === "" ? 1 : 0.8 })),

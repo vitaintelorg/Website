@@ -12,5 +12,3 @@ export type FormState = {
   success: boolean;
   message: string;
 };
-
-export type PortfolioCategory = "all" | "cancer" | "genomics" | "clinical";
