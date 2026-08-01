@@ -16,7 +16,7 @@ export default function ContactPage() {
         description={pageMetadata.contact.description}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <Container size="narrow">
           <div className="grid gap-6 sm:grid-cols-3">
             <a

@@ -73,12 +73,6 @@ export const pageMetadata = {
       "Stay updated with insights on AI, genomics, computational biology, and biomedical innovation from VitaIntel.",
     path: "/blog",
   },
-  testimonials: {
-    title: "Testimonials",
-    description:
-      "Hear from collaborators who have worked with VitaIntel to advance AI-driven healthcare.",
-    path: "/testimonials",
-  },
   contact: {
     title: "Contact",
     description:

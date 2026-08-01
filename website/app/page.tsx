@@ -5,7 +5,6 @@ import {
   Hero,
   PortfolioPreview,
   ServicesPreview,
-  TestimonialsPreview,
 } from "@/components/sections/home";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <ServicesPreview />
       <PortfolioPreview />
       <BlogPreview />
-      <TestimonialsPreview />
       <ContactCTA />
     </>
   );

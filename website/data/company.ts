@@ -10,40 +10,30 @@ export const company = {
     "AI-driven precision healthcare for Egyptian hospitals",
     "Supporting radiologists with trustworthy diagnostic AI",
   ],
-  team: [
-    {
-      name: "Abdullah Saber Abdelbaeth",
-      role: "Founder & CEO",
-      bio: "AI/ML engineer leading overall strategy and business development.",
-      initials: "AS",
-    },
-    {
-      name: "Mahmoud El-Masry",
-      role: "Founding Cybersecurity Lead",
-      bio: "Owns cybersecurity company-wide — infrastructure, endpoints, access control, and vendor risk as the team scales.",
-      initials: "ME",
-    },
-  ],
-  teamComposition:
-    "Alongside the founding leadership, VitaIntel is built by a six-person technical team — spanning AI/ML engineering with medical-domain knowledge, data annotation, full-stack development, and network engineering — plus a medical team of a senior radiologist and a trainee supporting clinical validation.",
+  team: {
+    intro: "Team profiles are coming soon.",
+    slots: [
+      { label: "Founder / team bio to be added" },
+      { label: "Founder / team bio to be added" },
+      { label: "Networking engineer bio to be added" },
+    ],
+  },
   regulatory: [
     {
-      title: "SaMD Classification",
-      status: "In progress",
-      description:
-        "Navigating Egypt's Software as a Medical Device framework with the Egyptian Drug Authority (EDA).",
+      title: "Egypt (EDA)",
+      status: "In Progress",
+      description: "Navigating SaMD classification with the Egyptian Drug Authority.",
+    },
+    {
+      title: "International (FDA / CE)",
+      status: "Not yet applicable",
+      description: "No international regulatory submissions at this stage — Egypt-first focus.",
     },
     {
       title: "Clinical Validation",
-      status: "R&D stage",
+      status: "Research stage",
       description:
-        "Model development and validation against published research benchmarks; clinical deployment not yet active.",
-    },
-    {
-      title: "Data Governance",
-      status: "In design",
-      description:
-        "Privacy and security controls are being designed to meet healthcare data requirements before any production deployment.",
+        "Models are being trained and validated on BUSI and CDD-CESM datasets; independent clinical validation has not yet taken place.",
     },
   ],
 } as const;

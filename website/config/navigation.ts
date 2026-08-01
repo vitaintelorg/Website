@@ -4,7 +4,6 @@ export const mainNav = [
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
-  { label: "Testimonials", href: "/testimonials" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -15,8 +14,5 @@ export const footerNav = {
     { label: "Portfolio", href: "/portfolio" },
     { label: "Contact", href: "/contact" },
   ],
-  resources: [
-    { label: "Blog", href: "/blog" },
-    { label: "Testimonials", href: "/testimonials" },
-  ],
+  resources: [{ label: "Blog", href: "/blog" }],
 } as const;

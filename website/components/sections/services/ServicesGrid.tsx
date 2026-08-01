@@ -13,7 +13,7 @@ const SERVICE_MOTIFS: Record<string, ComponentType<{ className?: string }>> = {
 
 export function ServicesGrid() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <Container>
         <div className="grid gap-8">
           {services.map((service) => {

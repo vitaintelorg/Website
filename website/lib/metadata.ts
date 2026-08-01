@@ -56,10 +56,11 @@ export function organizationJsonLd() {
       addressCountry: "EG",
     },
     sameAs: [
-      siteConfig.social.twitter,
+      siteConfig.social.instagram,
+      siteConfig.social.tiktok,
       siteConfig.social.linkedin,
       siteConfig.social.facebook,
-    ],
+    ].filter(Boolean),
   };
 }
 

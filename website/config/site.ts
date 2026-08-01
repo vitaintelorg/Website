@@ -14,7 +14,9 @@ export const siteConfig = {
     address: "6th of October, Giza, Egypt",
   },
   social: {
-    twitter: "https://x.com/VitaIntel",
+    // TODO: paste the real Instagram/TikTok URLs here once available.
+    instagram: "",
+    tiktok: "",
     linkedin: "https://linkedin.com/company/vitaintel",
     facebook: "https://www.facebook.com/share/1aKs3Y2abe/",
   },

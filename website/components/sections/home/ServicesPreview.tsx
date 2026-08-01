@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 export function ServicesPreview() {
   return (
-    <section className="bg-muted/30 py-20 md:py-28" aria-labelledby="services-preview-heading">
+    <section className="bg-muted/30 py-14 md:py-20" aria-labelledby="services-preview-heading">
       <Container>
         <SectionHeader
           eyebrow="Services"

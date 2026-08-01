@@ -10,7 +10,7 @@ export function PortfolioPreview() {
   const previewItems = portfolioItems.slice(0, 3);
 
   return (
-    <section className="py-20 md:py-28" aria-labelledby="portfolio-preview-heading">
+    <section className="py-14 md:py-20" aria-labelledby="portfolio-preview-heading">
       <Container>
         <SectionHeader
           eyebrow="Portfolio"

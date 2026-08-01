@@ -10,7 +10,7 @@ export function BlogPreview() {
   const posts = getLatestBlogPosts(3);
 
   return (
-    <section className="bg-muted/30 py-20 md:py-28" aria-labelledby="blog-preview-heading">
+    <section className="bg-muted/30 py-14 md:py-20" aria-labelledby="blog-preview-heading">
       <Container>
         <SectionHeader
           eyebrow="Blog"

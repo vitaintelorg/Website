@@ -17,7 +17,7 @@ export function PortfolioGrid() {
   }, [filter]);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <Container>
         <div
           className="mb-10 flex flex-wrap justify-center gap-2"
