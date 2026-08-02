@@ -1,5 +1,6 @@
 "use server";
 
+import { headers } from "next/headers";
 import { z } from "zod";
 import { Resend } from "resend";
 import { siteConfig } from "@/config/site";
@@ -46,6 +47,13 @@ async function verifyTurnstile(token: string | undefined): Promise<boolean> {
   return Boolean(data.success);
 }
 
+async function getClientIp(): Promise<string> {
+  const headersList = await headers();
+  const forwardedFor = headersList.get("x-forwarded-for");
+  if (forwardedFor) return forwardedFor.split(",")[0].trim();
+  return headersList.get("x-real-ip") ?? "unknown";
+}
+
 export async function submitContactForm(
   _prevState: FormState,
   formData: FormData
@@ -72,7 +80,7 @@ export async function submitContactForm(
     return { success: true, message: "Thank you — your message has been sent." };
   }
 
-  const ip = "global";
+  const ip = await getClientIp();
   if (!checkRateLimit(ip)) {
     return {
       success: false,
@@ -106,7 +114,7 @@ export async function submitContactForm(
   try {
     const resend = new Resend(resendKey);
     await resend.emails.send({
-      from: `VitaIntel Website <onboarding@resend.dev>`,
+      from: process.env.CONTACT_FROM_EMAIL ?? "VitaIntel Website <onboarding@resend.dev>",
       to: contactTo,
       replyTo: email,
       subject: `[VitaIntel Contact] ${topic} — ${name}`,
