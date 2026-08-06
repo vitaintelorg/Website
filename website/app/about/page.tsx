@@ -1,5 +1,5 @@
 import { AboutRegulatory, AboutStory, AboutTeam } from "@/components/sections/about/AboutSections";
-import { PageHero } from "@/components/common/PageHero";
+import { AboutVideoHero } from "@/components/sections/about/AboutVideoHero";
 import { pageMetadata } from "@/config/metadata";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -8,7 +8,7 @@ export const metadata = createPageMetadata(pageMetadata.about);
 export default function AboutPage() {
   return (
     <>
-      <PageHero title="About VitaIntel" description={pageMetadata.about.description} breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]} />
+      <AboutVideoHero />
       <AboutStory />
       <AboutTeam />
       <AboutRegulatory />

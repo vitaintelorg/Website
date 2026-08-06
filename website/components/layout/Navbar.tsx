@@ -15,9 +15,10 @@ import { Button } from "@/components/ui/button";
 export function Navbar() {
   const pathname = usePathname();
   const scrolled = useScroll(16);
-  // The homepage hero has a dark background, so the transparent (unscrolled)
-  // navbar needs light text there. Every other page's hero is light.
-  const onDarkHero = pathname === "/" && !scrolled;
+  // The homepage and About page heroes are dark/full-bleed, so the
+  // transparent (unscrolled) navbar needs light text there. Every other
+  // page's hero is light.
+  const onDarkHero = (pathname === "/" || pathname === "/about") && !scrolled;
 
   return (
     <header
