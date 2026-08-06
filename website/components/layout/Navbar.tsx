@@ -15,6 +15,9 @@ import { Button } from "@/components/ui/button";
 export function Navbar() {
   const pathname = usePathname();
   const scrolled = useScroll(16);
+  // The homepage hero has a dark background, so the transparent (unscrolled)
+  // navbar needs light text there. Every other page's hero is light.
+  const onDarkHero = pathname === "/" && !scrolled;
 
   return (
     <header
@@ -39,7 +42,12 @@ export function Navbar() {
               className="h-11 w-11 transition-transform group-hover:scale-105"
               priority
             />
-            <span className="text-xl font-bold tracking-tight text-brand-logo">
+            <span
+              className={cn(
+                "text-xl font-bold tracking-tight transition-colors",
+                onDarkHero ? "text-white" : "text-brand-logo"
+              )}
+            >
               {siteConfig.name}
             </span>
           </Link>
@@ -53,9 +61,13 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       "rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary",
-                      active
-                        ? "text-brand-secondary"
-                        : "text-foreground/80 hover:text-brand-secondary"
+                      onDarkHero
+                        ? active
+                          ? "text-white"
+                          : "text-white/75 hover:text-white"
+                        : active
+                          ? "text-brand-secondary"
+                          : "text-foreground/80 hover:text-brand-secondary"
                     )}
                     aria-current={active ? "page" : undefined}
                   >
@@ -78,7 +90,7 @@ export function Navbar() {
                 type="button"
                 variant="ghost"
                 size="icon"
-                className="lg:hidden"
+                className={cn("lg:hidden", onDarkHero && "text-white hover:bg-white/10")}
                 aria-label="Open menu"
               >
                 <Menu className="h-5 w-5" />
