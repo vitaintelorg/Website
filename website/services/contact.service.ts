@@ -10,6 +10,7 @@ import type { FormState } from "@/types/common";
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
   email: z.string().trim().email("Enter a valid email address"),
+  organization: z.string().trim().max(160).optional(),
   topic: z.string().trim().min(1, "Select a topic"),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(5000),
   website: z.string().optional(),
@@ -61,6 +62,7 @@ export async function submitContactForm(
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
+    organization: formData.get("organization"),
     topic: formData.get("topic"),
     message: formData.get("message"),
     website: formData.get("website"),
@@ -74,7 +76,7 @@ export async function submitContactForm(
     };
   }
 
-  const { name, email, topic, message, website, turnstileToken } = parsed.data;
+  const { name, email, organization, topic, message, website, turnstileToken } = parsed.data;
 
   if (website) {
     return { success: true, message: "Thank you — your message has been sent." };
@@ -98,7 +100,7 @@ export async function submitContactForm(
 
   if (!resendKey) {
     if (process.env.NODE_ENV === "development") {
-      console.info("[contact-form:dev]", { name, email, topic, message });
+      console.info("[contact-form:dev]", { name, email, organization, topic, message });
       return {
         success: true,
         message: "Development mode: message logged locally. Configure RESEND_API_KEY for email delivery.",
@@ -118,7 +120,7 @@ export async function submitContactForm(
       to: contactTo,
       replyTo: email,
       subject: `[VitaIntel Contact] ${topic} — ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nOrganization: ${organization || "—"}\nTopic: ${topic}\n\n${message}`,
     });
 
     return { success: true, message: "Thank you — your message has been sent. We'll respond soon." };

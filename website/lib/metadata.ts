@@ -87,30 +87,3 @@ export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
     })),
   };
 }
-
-export function articleJsonLd(post: {
-  title: string;
-  description: string;
-  slug: string;
-  publishedAt: string;
-  image?: string;
-}) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.publishedAt,
-    author: { "@type": "Organization", name: siteConfig.name },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteConfig.url}/images/logos/vitaintel-logo.svg`,
-      },
-    },
-    mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}`,
-    image: post.image ? `${siteConfig.url}${post.image}` : `${siteConfig.url}${siteConfig.ogImage}`,
-  };
-}

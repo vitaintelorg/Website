@@ -41,7 +41,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-muted/30">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <p className="text-xl font-bold text-brand-logo">{siteConfig.name}</p>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -97,24 +97,6 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2">
               {footerNav.company.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-brand-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-secondary rounded"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-              Resources
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {footerNav.resources.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}

@@ -67,12 +67,6 @@ export const pageMetadata = {
       "An honest look at VitaIntel's AI pipeline — model architecture, datasets, and roadmap.",
     path: "/technology",
   },
-  blog: {
-    title: "Blog",
-    description:
-      "Stay updated with insights on AI, genomics, computational biology, and biomedical innovation from VitaIntel.",
-    path: "/blog",
-  },
   contact: {
     title: "Contact",
     description:

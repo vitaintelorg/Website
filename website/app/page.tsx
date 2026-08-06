@@ -1,6 +1,5 @@
 import {
   AboutPreview,
-  BlogPreview,
   ContactCTA,
   Hero,
   ServicesPreview,
@@ -14,7 +13,6 @@ export default function Home() {
       <AboutPreview />
       <ServicesPreview />
       <TechnologyPreview />
-      <BlogPreview />
       <ContactCTA />
     </>
   );

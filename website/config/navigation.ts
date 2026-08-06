@@ -3,7 +3,6 @@ export const mainNav = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Technology", href: "/technology" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -14,5 +13,4 @@ export const footerNav = {
     { label: "Technology", href: "/technology" },
     { label: "Contact", href: "/contact" },
   ],
-  resources: [{ label: "Blog", href: "/blog" }],
 } as const;
