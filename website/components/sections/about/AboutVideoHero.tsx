@@ -1,6 +1,6 @@
 export function AboutVideoHero() {
   return (
-    <section className="relative flex h-[90vh] min-h-[550px] w-full items-center justify-center overflow-hidden text-center">
+    <section className="relative flex h-screen min-h-[600px] w-full items-center justify-center overflow-hidden text-center">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
