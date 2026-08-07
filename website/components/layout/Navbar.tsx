@@ -7,14 +7,26 @@ import { Menu } from "lucide-react";
 import { mainNav } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
 import { useScroll } from "@/hooks/useScroll";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { cn } from "@/lib/utils";
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
 import { Button } from "@/components/ui/button";
 
+// Matches the section ids on the homepage (Hero="home", then each preview
+// section). Used only to drive the scroll-spy highlight on "/" — other
+// pages fall back to plain pathname matching.
+const HOME_SECTION_IDS = ["home", "about", "services", "technology", "contact"];
+
+function hrefToSectionId(href: string) {
+  return href === "/" ? "home" : href.replace("/", "");
+}
+
 export function Navbar() {
   const pathname = usePathname();
   const scrolled = useScroll(16);
+  const activeSection = useScrollSpy(HOME_SECTION_IDS);
+  const isHome = pathname === "/";
   // The homepage and About page heroes are dark/full-bleed, so the
   // transparent (unscrolled) navbar needs light text there. Every other
   // page's hero is light.
@@ -55,7 +67,9 @@ export function Navbar() {
 
           <ul className="hidden items-center gap-1 lg:flex">
             {mainNav.map((item) => {
-              const active = pathname === item.href;
+              const active = isHome
+                ? activeSection === hrefToSectionId(item.href)
+                : pathname === item.href;
               return (
                 <li key={item.href}>
                   <Link

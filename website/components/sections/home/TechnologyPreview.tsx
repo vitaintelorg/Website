@@ -26,7 +26,7 @@ export function TechnologyPreview() {
   const previewStages = pipelineStages.slice(0, 3);
 
   return (
-    <section className="py-14 md:py-20" aria-labelledby="technology-preview-heading">
+    <section id="technology" className="py-14 md:py-20" aria-labelledby="technology-preview-heading">
       <Container>
         <SectionHeader
           eyebrow="Technology"

@@ -9,6 +9,7 @@ import { FadeInSection } from "@/components/common/FadeInSection";
 export function ContactCTA() {
   return (
     <section
+      id="contact"
       className="relative overflow-hidden bg-gradient-to-br from-brand-secondary to-brand-primary py-20 text-white md:py-28"
       aria-labelledby="contact-cta-heading"
     >

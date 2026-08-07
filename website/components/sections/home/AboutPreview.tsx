@@ -9,7 +9,7 @@ import { CellClusterMotif } from "@/components/common/CellClusterMotif";
 
 export function AboutPreview() {
   return (
-    <section className="py-14 md:py-20" aria-labelledby="about-preview-heading">
+    <section id="about" className="py-14 md:py-20" aria-labelledby="about-preview-heading">
       <Container>
         <SectionHeader
           eyebrow="About"
