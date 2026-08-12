@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[92vh] items-center overflow-hidden bg-[#050e16] pt-24"
+      className="relative flex h-screen min-h-[600px] items-center overflow-hidden bg-[#050e16] pt-24"
       aria-labelledby="hero-heading"
     >
       {/* dark gradient base + subtle dot-grid texture, echoing a circuit board */}

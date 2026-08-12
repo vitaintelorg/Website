@@ -1,31 +1,56 @@
 import type { ComponentType } from "react";
+import { Dna, Microscope, ScanLine } from "lucide-react";
 import { services } from "@/data/services";
 import { Container } from "@/components/layout/Container";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { FadeInSection } from "@/components/common/FadeInSection";
-import { ScanSweepMotif } from "@/components/common/ScanSweepMotif";
-import { DnaHelixMotif } from "@/components/common/DnaHelixMotif";
+import { ComputeMotif, QuantumDnaMotif, ScanAnalysisMotif } from "@/components/common/ServiceMotifs";
+import { PipelineConnector } from "@/components/common/PipelineConnector";
 
 const SERVICE_MOTIFS: Record<string, ComponentType<{ className?: string }>> = {
-  "diagnostic-imaging": ScanSweepMotif,
-  "genomic-ai": DnaHelixMotif,
+  "diagnostic-imaging": ScanAnalysisMotif,
+  "genomic-ai": QuantumDnaMotif,
+  "computational-biology": ComputeMotif,
+};
+
+const SERVICE_ICONS: Record<string, ComponentType<{ className?: string }>> = {
+  "diagnostic-imaging": ScanLine,
+  "genomic-ai": Dna,
+  "computational-biology": Microscope,
 };
 
 export function ServicesGrid() {
   return (
     <section className="py-12 md:py-16">
       <Container>
-        <div className="grid gap-8">
-          {services.map((service) => {
+        <PipelineConnector
+          items={services.map((s) => s.title)}
+          className="mb-16 hidden px-4 md:block"
+        />
+
+        <div className="space-y-16 md:space-y-24">
+          {services.map((service, i) => {
             const Motif = SERVICE_MOTIFS[service.slug];
+            const Icon = SERVICE_ICONS[service.slug];
+            const reversed = i % 2 === 1;
             return (
               <FadeInSection key={service.slug} id={service.slug} className="scroll-mt-28">
-                <div className="relative grid gap-6 overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm lg:grid-cols-[1fr_1.2fr] lg:p-8">
-                  {Motif && (
-                    <Motif className="pointer-events-none absolute -right-8 -top-8 hidden h-56 w-56 opacity-40 lg:block" />
-                  )}
-                  <ServiceCard serviceSlug={service.slug} className="relative border-0 bg-transparent p-0 shadow-none" />
-                  <div className="relative space-y-4">
+                <div className="grid items-center gap-10 lg:grid-cols-2">
+                  <div
+                    className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-brand-primary/10 to-brand-secondary/5 ${
+                      reversed ? "lg:order-2" : "lg:order-1"
+                    }`}
+                  >
+                    {Motif && <Motif className="h-[75%] w-[75%]" />}
+                    <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-background text-brand-secondary shadow-sm">
+                      {Icon && <Icon className="h-4 w-4" />}
+                    </span>
+                  </div>
+                  <div className={`space-y-4 ${reversed ? "lg:order-1" : "lg:order-2"}`}>
+                    <ServiceCard
+                      serviceSlug={service.slug}
+                      className="border-0 bg-transparent p-0 shadow-none"
+                    />
                     <p className="text-muted-foreground">{service.description}</p>
                     <ul className="grid gap-2 sm:grid-cols-2">
                       {service.features.map((feature) => (

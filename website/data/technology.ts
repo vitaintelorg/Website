@@ -47,9 +47,17 @@ export const pipelineStages: PipelineStage[] = [
 ];
 
 export const datasetsIntro =
-  "Two imaging datasets are in active use for the breast cancer model, alongside public genomics resources (TCGA, cBioPortal) referenced for the genomic-risk research track.";
+  "Three imaging datasets support the mammography model — a large public dataset for pre-training, fine-tuned on Egyptian-specific data — alongside public genomics resources (TCGA, cBioPortal) referenced for the genomic-risk research track.";
 
 export const datasets: Dataset[] = [
+  {
+    slug: "cbis-ddsm",
+    name: "CBIS-DDSM",
+    modality: "Curated Breast Imaging Subset — Mammography",
+    description:
+      "A large public mammography dataset used to pre-train a strong general-purpose mammogram model, before it's fine-tuned on Egyptian-specific data.",
+    status: "pretraining-source",
+  },
   {
     slug: "busi",
     name: "BUSI",
@@ -63,9 +71,18 @@ export const datasets: Dataset[] = [
     name: "CDD-CESM",
     modality: "Contrast-Enhanced Spectral Mammography",
     description:
-      "Low-energy and subtracted mammography images. Preprocessing is still in progress.",
+      "Low-energy and subtracted mammography images from Egyptian patients. Preprocessing is still in progress.",
     status: "preprocessing-in-progress",
   },
+];
+
+// The mammography model's transfer-learning path: pre-train broad, then
+// specialize on Egyptian-specific data.
+export const mammographyPipeline = [
+  { label: "CBIS-DDSM", description: "Large public mammography dataset" },
+  { label: "Strong mammogram model", description: "General-purpose pre-trained model" },
+  { label: "Fine-tune on CDD-CESM", description: "Egyptian-specific contrast-enhanced mammography data" },
+  { label: "Final mammogram model", description: "Specialized for the Egyptian patient population", done: true },
 ];
 
 export const roadmap: RoadmapItem[] = [

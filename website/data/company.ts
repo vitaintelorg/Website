@@ -10,14 +10,36 @@ export const company = {
     "AI-driven precision healthcare for Egyptian hospitals",
     "Supporting radiologists with trustworthy diagnostic AI",
   ],
-  team: {
-    intro: "Team profiles are coming soon.",
-    slots: [
-      { label: "Founder / team bio to be added" },
-      { label: "Founder / team bio to be added" },
-      { label: "Networking engineer bio to be added" },
-    ],
+  team: [
+  {
+    name: "Abdullah Saber",
+    initials: "AS",
+    photo: "/images/team/Abdullah_Saber.jpeg",
+    title: "Founder & CEO",
+    tags: ["AI/ML Engineer — strategy & business development", "Researcher, tumors & cancer"],
   },
+  {
+    name: "Mahmoud El Masry",
+    initials: "ME",
+    photo: "/images/team/mahmoud_Elmasry.jpeg",
+    title: "Founding Cybersecurity Lead",
+    tags: ["Covers all cybersecurity matters company-wide"],
+  },
+  {
+    name: "AbdulRahman Al-Husseini",
+    initials: "AH",
+    photo: "/images/team/AbdulRahman_Al-Husseini.jpeg",
+    title: "Network Engineer",
+    tags: ["Former Data Annotation"],
+  },
+  {
+    name: "Mustafa Al-Dawi",
+    initials: "MD",
+    photo: "/images/team/Mustafa_Al-Dawi.jpeg",
+    title: "Data Annotation Specialist",
+    tags: ["QA Engineer"],
+  },
+],
   regulatory: [
     {
       title: "Egypt (EDA)",

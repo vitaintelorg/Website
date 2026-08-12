@@ -10,7 +10,7 @@ const sizes = {
   wide: "max-w-7xl",
 };
 
-export function Container({ className, size = "default", ...props }: ContainerProps) {
+export function Container({ className, size = "wide", ...props }: ContainerProps) {
   return (
     <div
       className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", sizes[size], className)}

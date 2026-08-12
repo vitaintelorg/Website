@@ -12,7 +12,10 @@ export type PipelineStage = {
   status: PipelineStatus;
 };
 
-export type DatasetStatus = "preprocessing-complete" | "preprocessing-in-progress";
+export type DatasetStatus =
+  | "preprocessing-complete"
+  | "preprocessing-in-progress"
+  | "pretraining-source";
 
 export type Dataset = {
   slug: string;
