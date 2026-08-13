@@ -7,8 +7,7 @@ export const siteConfig = {
   ogImage: "/og-image.png",
   locale: "en_US",
   contact: {
-    email: "hello@vitaintel.org",
-    legacyEmail: "info@vitaintel.tech",
+    email: "info@vitaintel.org",
     phone: "+20 11 2465 1928",
     phoneHref: "tel:+201124651928",
     address: "6th of October, Giza, Egypt",
