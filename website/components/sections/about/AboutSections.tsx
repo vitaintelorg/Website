@@ -29,17 +29,18 @@ export function AboutTeam() {
   return (
     <section className="bg-muted/30 py-12 md:py-16">
       <Container>
-        <SectionHeader title="Our Team" description={company.team.intro} />
+        <SectionHeader title="Our Team" description="Meet the people building VitaIntel." />
         <div className="grid gap-6 sm:grid-cols-3">
-          {company.team.slots.map((slot, i) => (
+          {company.team.map((member) => (
             <article
-              key={i}
+              key={member.name}
               className="rounded-2xl border border-border bg-card p-6 text-center shadow-sm"
             >
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary/10 text-brand-secondary">
                 <Users2 className="h-6 w-6" aria-hidden="true" />
               </div>
-              <p className="text-sm font-medium text-foreground">{slot.label}</p>
+              <p className="text-sm font-medium text-foreground">{member.name}</p>
+              <p className="text-xs text-muted-foreground">{member.title}</p>
             </article>
           ))}
         </div>
