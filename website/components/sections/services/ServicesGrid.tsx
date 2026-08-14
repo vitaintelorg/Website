@@ -24,7 +24,7 @@ export function ServicesGrid() {
     <section className="py-12 md:py-16">
       <Container>
         <PipelineConnector
-          items={services.map((s) => s.title)}
+          items={services.map((s) => ({ label: s.title, Icon: SERVICE_ICONS[s.slug] }))}
           className="mb-16 hidden px-4 md:block"
         />
 
