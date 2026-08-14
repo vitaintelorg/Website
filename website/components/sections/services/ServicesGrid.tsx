@@ -1,3 +1,4 @@
+"use client";
 import type { ComponentType } from "react";
 import { Dna, Microscope, ScanLine } from "lucide-react";
 import { services } from "@/data/services";
